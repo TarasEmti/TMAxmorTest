@@ -1,15 +1,17 @@
 //
-//  ViewController.h
+//  TMPictureCell.m
 //  TMAxmorTest
 //
 //  Created by Тарас on 17.07.16.
 //  Copyright © 2016 Тарас. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "TMPictureCell.h"
 
-@interface ViewController : UIViewController
-
+@interface TMPictureCell ()
 
 @end
 
+@implementation TMPictureCell
+
+@end

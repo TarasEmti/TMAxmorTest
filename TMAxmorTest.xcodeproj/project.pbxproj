@@ -7,25 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		760500421D3FEDB6002DF350 /* library.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 760500411D3FEDB6002DF350 /* library.jpg */; };
+		760500441D3FEDC8002DF350 /* villa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 760500431D3FEDC8002DF350 /* villa.jpg */; };
+		760500461D3FEDD7002DF350 /* dog.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 760500451D3FEDD7002DF350 /* dog.jpg */; };
+		760500481D3FEDDF002DF350 /* beach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 760500471D3FEDDF002DF350 /* beach.jpg */; };
+		7605004A1D3FEDE7002DF350 /* statue.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 760500491D3FEDE7002DF350 /* statue.jpg */; };
+		7605004C1D3FEDEE002DF350 /* flowers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 7605004B1D3FEDEE002DF350 /* flowers.jpg */; };
+		7605004F1D436BCC002DF350 /* TMCellData.m in Sources */ = {isa = PBXBuildFile; fileRef = 7605004E1D436BCC002DF350 /* TMCellData.m */; };
 		76E093531D3AA0C0007A3777 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E093521D3AA0C0007A3777 /* main.m */; };
 		76E093561D3AA0C0007A3777 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E093551D3AA0C0007A3777 /* AppDelegate.m */; };
-		76E093591D3AA0C0007A3777 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E093581D3AA0C0007A3777 /* ViewController.m */; };
 		76E0935C1D3AA0C0007A3777 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76E0935A1D3AA0C0007A3777 /* Main.storyboard */; };
 		76E0935E1D3AA0C0007A3777 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 76E0935D1D3AA0C0007A3777 /* Assets.xcassets */; };
 		76E093611D3AA0C0007A3777 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 76E0935F1D3AA0C0007A3777 /* LaunchScreen.storyboard */; };
+		76E0936D1D3AA325007A3777 /* TMPictureGramController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E0936C1D3AA325007A3777 /* TMPictureGramController.m */; };
+		76E093701D3AA34D007A3777 /* TMPictureCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 76E0936F1D3AA34D007A3777 /* TMPictureCell.m */; };
+		76EBD94B1D52AA1500EE1AE4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76EBD94A1D52AA1500EE1AE4 /* CoreGraphics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		760500411D3FEDB6002DF350 /* library.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = library.jpg; sourceTree = "<group>"; };
+		760500431D3FEDC8002DF350 /* villa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = villa.jpg; sourceTree = "<group>"; };
+		760500451D3FEDD7002DF350 /* dog.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dog.jpg; sourceTree = "<group>"; };
+		760500471D3FEDDF002DF350 /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beach.jpg; sourceTree = "<group>"; };
+		760500491D3FEDE7002DF350 /* statue.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = statue.jpg; sourceTree = "<group>"; };
+		7605004B1D3FEDEE002DF350 /* flowers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = flowers.jpg; sourceTree = "<group>"; };
+		7605004D1D436BCC002DF350 /* TMCellData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCellData.h; sourceTree = "<group>"; };
+		7605004E1D436BCC002DF350 /* TMCellData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCellData.m; sourceTree = "<group>"; };
 		76E0934E1D3AA0C0007A3777 /* TMAxmorTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMAxmorTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		76E093521D3AA0C0007A3777 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		76E093541D3AA0C0007A3777 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		76E093551D3AA0C0007A3777 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		76E093571D3AA0C0007A3777 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		76E093581D3AA0C0007A3777 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		76E0935B1D3AA0C0007A3777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		76E0935D1D3AA0C0007A3777 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		76E093601D3AA0C0007A3777 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		76E093621D3AA0C0007A3777 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		76E0936B1D3AA325007A3777 /* TMPictureGramController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPictureGramController.h; sourceTree = "<group>"; };
+		76E0936C1D3AA325007A3777 /* TMPictureGramController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPictureGramController.m; sourceTree = "<group>"; };
+		76E0936E1D3AA34D007A3777 /* TMPictureCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMPictureCell.h; sourceTree = "<group>"; };
+		76E0936F1D3AA34D007A3777 /* TMPictureCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMPictureCell.m; sourceTree = "<group>"; };
+		76EBD94A1D52AA1500EE1AE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76EBD94B1D52AA1500EE1AE4 /* CoreGraphics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +63,7 @@
 		76E093451D3AA0C0007A3777 = {
 			isa = PBXGroup;
 			children = (
+				76EBD94A1D52AA1500EE1AE4 /* CoreGraphics.framework */,
 				76E093501D3AA0C0007A3777 /* TMAxmorTest */,
 				76E0934F1D3AA0C0007A3777 /* Products */,
 			);
@@ -58,10 +80,14 @@
 		76E093501D3AA0C0007A3777 /* TMAxmorTest */ = {
 			isa = PBXGroup;
 			children = (
+				76E0936E1D3AA34D007A3777 /* TMPictureCell.h */,
+				76E0936F1D3AA34D007A3777 /* TMPictureCell.m */,
+				76E0936B1D3AA325007A3777 /* TMPictureGramController.h */,
+				76E0936C1D3AA325007A3777 /* TMPictureGramController.m */,
+				7605004D1D436BCC002DF350 /* TMCellData.h */,
+				7605004E1D436BCC002DF350 /* TMCellData.m */,
 				76E093541D3AA0C0007A3777 /* AppDelegate.h */,
 				76E093551D3AA0C0007A3777 /* AppDelegate.m */,
-				76E093571D3AA0C0007A3777 /* ViewController.h */,
-				76E093581D3AA0C0007A3777 /* ViewController.m */,
 				76E0935A1D3AA0C0007A3777 /* Main.storyboard */,
 				76E0935D1D3AA0C0007A3777 /* Assets.xcassets */,
 				76E0935F1D3AA0C0007A3777 /* LaunchScreen.storyboard */,
@@ -74,6 +100,12 @@
 		76E093511D3AA0C0007A3777 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7605004B1D3FEDEE002DF350 /* flowers.jpg */,
+				760500491D3FEDE7002DF350 /* statue.jpg */,
+				760500471D3FEDDF002DF350 /* beach.jpg */,
+				760500451D3FEDD7002DF350 /* dog.jpg */,
+				760500431D3FEDC8002DF350 /* villa.jpg */,
+				760500411D3FEDB6002DF350 /* library.jpg */,
 				76E093521D3AA0C0007A3777 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -105,6 +137,7 @@
 		76E093461D3AA0C0007A3777 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = TM;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Тарас";
 				TargetAttributes = {
@@ -136,9 +169,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7605004C1D3FEDEE002DF350 /* flowers.jpg in Resources */,
 				76E093611D3AA0C0007A3777 /* LaunchScreen.storyboard in Resources */,
+				760500481D3FEDDF002DF350 /* beach.jpg in Resources */,
+				7605004A1D3FEDE7002DF350 /* statue.jpg in Resources */,
 				76E0935E1D3AA0C0007A3777 /* Assets.xcassets in Resources */,
 				76E0935C1D3AA0C0007A3777 /* Main.storyboard in Resources */,
+				760500441D3FEDC8002DF350 /* villa.jpg in Resources */,
+				760500421D3FEDB6002DF350 /* library.jpg in Resources */,
+				760500461D3FEDD7002DF350 /* dog.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,8 +188,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				76E093591D3AA0C0007A3777 /* ViewController.m in Sources */,
+				76E093701D3AA34D007A3777 /* TMPictureCell.m in Sources */,
 				76E093561D3AA0C0007A3777 /* AppDelegate.m in Sources */,
+				76E0936D1D3AA325007A3777 /* TMPictureGramController.m in Sources */,
+				7605004F1D436BCC002DF350 /* TMCellData.m in Sources */,
 				76E093531D3AA0C0007A3777 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,7 +308,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TMAxmorTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Null.TMAxmorTest;
+				PRODUCT_BUNDLE_IDENTIFIER = TMAxmorTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -278,7 +319,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TMAxmorTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Null.TMAxmorTest;
+				PRODUCT_BUNDLE_IDENTIFIER = TMAxmorTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -302,6 +343,7 @@
 				76E093671D3AA0C0007A3777 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
