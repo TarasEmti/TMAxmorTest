@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface TMPictureGramController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate>
+@interface TMPictureGramController : UICollectionViewController <UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIImagePickerControllerDelegate, UITextFieldDelegate>
 
 {
     NSMutableArray* arrPictures;

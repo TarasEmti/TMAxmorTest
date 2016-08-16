@@ -13,6 +13,9 @@
 @interface TMPictureGramController ()
 
 @property (strong, atomic) UIImagePickerController* imagePicker;
+@property (nonatomic) int urlCounter;
+@property (nonatomic) int galleryCounter;
+@property (nonatomic) int cameraCounter;
 
 @end
 
@@ -54,6 +57,10 @@
     pic.cellName = @"Library";
     pic.cellPicture = [UIImage imageNamed:@"library.jpg"];
     [arrPictures addObject:pic];
+    
+    _urlCounter = 0;
+    _galleryCounter = 0;
+    _cameraCounter = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -128,6 +135,40 @@
     
     UIAlertController* subMenu = [UIAlertController alertControllerWithTitle:@"Select Source" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     
+    UIAlertAction* url = [UIAlertAction actionWithTitle:@"URL" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+        UIAlertController* typeUrlview = [UIAlertController alertControllerWithTitle:@"Add picture" message:@"Enter picture URL" preferredStyle:UIAlertControllerStyleAlert];
+        
+        UIAlertAction* searchForPicture = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+            
+            UITextField *urlEnter = typeUrlview.textFields[0];
+            NSString *urlText = [NSString stringWithString:urlEnter.text];
+            
+            if ([urlText hasSuffix:@"png"] || [urlText hasSuffix:@"jpg"] ||
+                [urlText hasSuffix:@"jpeg"] || [urlText hasSuffix:@"gif"]) {
+            
+                [self addPicturebyURL:urlText];
+                [self dismissViewControllerAnimated:YES completion:nil];
+                
+            } else {
+                
+                UIAlertController* wrongUrl = [UIAlertController alertControllerWithTitle:@"Error" message:@"URL has no image" preferredStyle:UIAlertControllerStyleAlert];
+                UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleCancel handler:nil];
+                [wrongUrl addAction:ok];
+                [self presentViewController:wrongUrl animated:YES completion:nil];
+            }
+        }];
+        
+        [typeUrlview addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.placeholder = @"URL";
+        }];
+        
+        [typeUrlview addAction: searchForPicture];
+        
+        [self presentViewController:typeUrlview animated:YES completion:nil];
+    }];
+ 
+    
     UIAlertAction* gallery = [UIAlertAction actionWithTitle:@"Gallery" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         [self handleGallery];
     }];
@@ -140,6 +181,7 @@
         [self dismissViewControllerAnimated:YES completion:nil];
     }];
     
+    [subMenu addAction:url];
     [subMenu addAction:gallery];
     [subMenu addAction:camera];
     [subMenu addAction:cancel];
@@ -156,7 +198,8 @@
     TMCellData* pic = [[TMCellData alloc] init];
     pic.cellPicture = chosenImage;
     
-    NSString* name = [NSString stringWithFormat:@"Gallery pic %lu", (unsigned long)arrPictures.count];
+    _galleryCounter++;
+    NSString* name = [NSString stringWithFormat:@"Gallery pic %d", _galleryCounter];
     pic.cellName = name;
     
     [arrPictures addObject:pic];
@@ -209,14 +252,16 @@
     pic.cellName = [arrPictures[indexPath.row] cellName];
     
     
+    
     [arrPictures insertObject:pic atIndex:(indexPath.row + 1)];
     NSIndexPath* newIndexPath = [NSIndexPath indexPathForItem:(indexPath.row + 1) inSection:0];
     [self.collectionView insertItemsAtIndexPaths:@[newIndexPath]];
     
-    TMPictureCell *busyCell = [self.collectionView cellForItemAtIndexPath:newIndexPath];
+    TMPictureCell *busyCell = [[self collectionView] cellForItemAtIndexPath:newIndexPath];
     busyCell.loadState = [[UIView alloc] initWithFrame:busyCell.img.bounds];
     busyCell.loadState.backgroundColor = [UIColor blackColor];
     busyCell.loadState.alpha = 0.5f;
+    busyCell.isStoped = NO;
     [busyCell addSubview:busyCell.loadState];
 
     int delay = ((arc4random() % 24) + 8);
@@ -233,7 +278,7 @@
     CIContext *context = [CIContext contextWithOptions:nil];
     CIImage *ciimg = [CIImage imageWithCGImage:originalImg.CGImage];
     
-    if ([filterName  isEqual:@"B&W"]) {
+    if ([filterName isEqual:@"B&W"]) {
         
         CIFilter *filter = [CIFilter filterWithName:@"CIPhotoEffectMono"];
         [filter setValue:ciimg forKey:kCIInputImageKey];
@@ -243,8 +288,10 @@
         UIImage *resultImg = [UIImage imageWithCGImage:cgimg];
         CGImageRelease(cgimg);
         
-        NSString *name = [NSString stringWithFormat:@"%@ B&W", pic.cellName];
-        pic.cellName = name;
+        if (![pic.cellName containsString:@"B&W"]) {
+            NSString *name = [NSString stringWithFormat:@"%@ B&W", pic.cellName];
+            pic.cellName = name;
+        }
         pic.cellPicture = resultImg;
         
     } else if ([filterName isEqual:@"Inv"]) {
@@ -257,17 +304,20 @@
         UIImage *resultImg = [UIImage imageWithCGImage:cgimg];
         CGImageRelease(cgimg);
 
-        
-        NSString *name = [NSString stringWithFormat:@"%@ Inv", pic.cellName];
-        pic.cellName = name;
+        if (![pic.cellName containsString:@"Inv"]) {
+            NSString *name = [NSString stringWithFormat:@"%@ Inv", pic.cellName];
+            pic.cellName = name;
+        }
         pic.cellPicture = resultImg;
         
     } else if ([filterName isEqual:@"Vmir"]){
        
         UIImage *resultImg = [UIImage imageWithCGImage:originalImg.CGImage scale:1.0f orientation:UIImageOrientationDownMirrored];
         
-        NSString *name = [NSString stringWithFormat:@"%@ Vmir", pic.cellName];
-        pic.cellName = name;
+        if ([pic.cellName containsString:@"Vmir"]) {
+            NSString *name = [NSString stringWithFormat:@"%@ Vmir", pic.cellName];
+            pic.cellName = name;
+        }
         pic.cellPicture = resultImg;
     }
     arrPictures[newIndexPath.row] = pic;
@@ -295,6 +345,18 @@
         }
     }
 
+}
+
+- (void)addPicturebyURL:(NSString *)urlText {
+
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlText]];
+        TMCellData *newPic = [[TMCellData alloc] init];
+        newPic.cellPicture = [UIImage imageWithData:data];
+        _urlCounter++;
+        newPic.cellName = [NSString stringWithFormat:@"URL Pic %d", _urlCounter];
+    
+        [arrPictures addObject:newPic];
+        [[self collectionView] reloadData];
 }
 
 @end
