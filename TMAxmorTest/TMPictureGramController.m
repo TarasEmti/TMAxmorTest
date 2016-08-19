@@ -144,8 +144,11 @@
             UITextField *urlEnter = typeUrlview.textFields[0];
             NSString *urlText = [NSString stringWithString:urlEnter.text];
             
-            if ([urlText hasSuffix:@"png"] || [urlText hasSuffix:@"jpg"] ||
-                [urlText hasSuffix:@"jpeg"] || [urlText hasSuffix:@"gif"]) {
+            NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:urlText]];
+            
+            if (([urlText hasSuffix:@"png"] || [urlText hasSuffix:@"jpg"] ||
+                [urlText hasSuffix:@"jpeg"] || [urlText hasSuffix:@"gif"] ||
+                [urlText hasSuffix:@"tiff"] || [urlText hasSuffix:@"bmp"]) && (data)) {
             
                 [self addPicturebyURL:urlText];
                 [self dismissViewControllerAnimated:YES completion:nil];
